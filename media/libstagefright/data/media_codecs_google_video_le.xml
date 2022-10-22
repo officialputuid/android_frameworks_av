@@ -35,7 +35,7 @@
         </MediaCodec>
         <MediaCodec name="OMX.google.h264.decoder" type="video/avc">
             <!-- profiles and levels:  ProfileHigh : Level51 -->
-            <Limit name="size" min="2x2" max="2048x2048" />
+            <Limit name="size" min="2x2" max="2400x1080" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
             <Limit name="block-count" range="1-16384" />
@@ -45,7 +45,7 @@
         </MediaCodec>
         <MediaCodec name="OMX.google.hevc.decoder" type="video/hevc">
             <!-- profiles and levels:  ProfileMain : MainTierLevel51 -->
-            <Limit name="size" min="2x2" max="2048x2048" />
+            <Limit name="size" min="2x2" max="2400x1080" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="8x8" />
             <Limit name="block-count" range="1-65536" />
@@ -54,7 +54,7 @@
             <Feature name="adaptive-playback" />
         </MediaCodec>
         <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8">
-            <Limit name="size" min="2x2" max="2048x2048" />
+            <Limit name="size" min="2x2" max="2400x1080" />
             <Limit name="alignment" value="2x2" />
             <Limit name="block-size" value="16x16" />
             <Limit name="block-count" range="1-8192" /> <!-- max 2048x1024 -->

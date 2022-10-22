@@ -507,6 +507,14 @@ OMX_ERRORTYPE SoftVideoDecoderOMXComponent::internalSetParameter(
                 ALOGE("b/22885421");
                 return OMX_ErrorBadParameter;
             }
+            // 20150126 Marcus Huang: Fix ALPS01919422; limits the max width/height
+            //@Vdec_drv_if_public.c
+            //  DEC_MAX_WIDTH = 2400;
+            //  DEC_MAX_HEIGHT = 1080;
+            if ((newWidth * newHeight) > (2400 * 1080)) {
+                ALOGE("frame size is not supported (%d x %d)", newWidth, newHeight);
+                return OMX_ErrorUnsupportedSetting;
+            }
             if (newWidth != oldWidth || newHeight != oldHeight) {
                 bool outputPort = (newParams->nPortIndex == kOutputPortIndex);
                 if (outputPort) {
